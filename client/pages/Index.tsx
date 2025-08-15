@@ -87,7 +87,7 @@ export default function Index() {
         
         <div className="space-y-3">
           {/* Start Focus Session */}
-          <Card className="border-karma-neutral-200 hover:bg-karma-neutral-50 transition-colors cursor-pointer">
+          <Card className="border-karma-neutral-200 hover:bg-karma-neutral-50 transition-colors cursor-pointer shadow-sm">
             <CardContent className="flex items-center justify-between p-4">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 bg-karma-neutral-100 rounded-full flex items-center justify-center">
@@ -103,7 +103,7 @@ export default function Index() {
           </Card>
 
           {/* View Notification Digest */}
-          <Card className="border-karma-neutral-200 hover:bg-karma-neutral-50 transition-colors cursor-pointer">
+          <Card className="border-karma-neutral-200 hover:bg-karma-neutral-50 transition-colors cursor-pointer shadow-sm">
             <CardContent className="flex items-center justify-between p-4">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 bg-karma-neutral-100 rounded-full flex items-center justify-center">
@@ -121,7 +121,7 @@ export default function Index() {
           </Card>
 
           {/* Karma Credits Dashboard */}
-          <Card className="border-karma-neutral-200 hover:bg-karma-neutral-50 transition-colors cursor-pointer">
+          <Card className="border-karma-neutral-200 hover:bg-karma-neutral-50 transition-colors cursor-pointer shadow-sm">
             <CardContent className="flex items-center justify-between p-4">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 bg-karma-sage-200 rounded-full flex items-center justify-center">
