@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { X, Pause, Play, Clock, Plus, Minus } from "lucide-react";
+import { X, Pause, Play, Clock, Plus, Minus, Home, Eye, Bell, Receipt, Coins } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function FocusGate() {
