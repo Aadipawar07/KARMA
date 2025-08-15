@@ -88,20 +88,22 @@ export default function Index() {
         
         <div className="space-y-3">
           {/* Start Focus Session */}
-          <Card className="border-karma-neutral-200 hover:bg-karma-neutral-50 transition-colors cursor-pointer shadow-sm">
-            <CardContent className="flex items-center justify-between p-4">
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 bg-karma-neutral-100 rounded-full flex items-center justify-center">
-                  <Eye className="w-5 h-5 text-karma-neutral-600" />
+          <Link to="/focus-gate">
+            <Card className="border-karma-neutral-200 hover:bg-karma-neutral-50 transition-colors cursor-pointer shadow-sm">
+              <CardContent className="flex items-center justify-between p-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 bg-karma-neutral-100 rounded-full flex items-center justify-center">
+                    <Eye className="w-5 h-5 text-karma-neutral-600" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-karma-neutral-800 text-sm">Start Focus Session</div>
+                    <div className="text-xs text-karma-neutral-600">Mindful breathing before you browse</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-semibold text-karma-neutral-800 text-sm">Start Focus Session</div>
-                  <div className="text-xs text-karma-neutral-600">Mindful breathing before you browse</div>
-                </div>
-              </div>
-              <ChevronRight className="w-4 h-4 text-karma-neutral-400" />
-            </CardContent>
-          </Card>
+                <ChevronRight className="w-4 h-4 text-karma-neutral-400" />
+              </CardContent>
+            </Card>
+          </Link>
 
           {/* View Notification Digest */}
           <Card className="border-karma-neutral-200 hover:bg-karma-neutral-50 transition-colors cursor-pointer shadow-sm">
