@@ -153,7 +153,7 @@ export default function Index() {
 
       {/* Begin Mindful Session Button */}
       <div className="px-4 sm:px-6 mb-6">
-        <Button className="w-full bg-karma-sage-600 hover:bg-karma-sage-700 text-white font-semibold py-3 rounded-lg">
+        <Button className="w-full bg-karma-sage-600 hover:bg-karma-sage-700 text-white font-semibold py-3 rounded-lg shadow-sm">
           Begin Mindful Session
         </Button>
         <div className="flex items-center justify-center gap-2 mt-3">
