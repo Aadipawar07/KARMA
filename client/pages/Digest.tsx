@@ -84,6 +84,62 @@ export default function Digest() {
     setNotifications(prev => prev.map(notif => ({ ...notif, isRead: true })));
   };
 
+  const handleShowReceipt = (notification: NotificationItem) => {
+    setSelectedNotification(notification);
+    setShowContentReceipt(true);
+  };
+
+  const getContentReasonForNotification = (app: string) => {
+    switch (app) {
+      case "WhatsApp":
+        return "Work group messages appear in your digest because you've marked work communications as priority.";
+      case "Instagram":
+        return "Post engagement notifications are shown because you follow this creator and engage with similar content.";
+      case "Twitter":
+        return "Tweet replies appear because you actively participate in conversations on this platform.";
+      case "Calendar":
+        return "Meeting reminders are prioritized because you have them set as high-importance events.";
+      default:
+        return "This content appears because it aligns with your interests and activity patterns.";
+    }
+  };
+
+  const getReasonChipsForNotification = (app: string) => {
+    const baseChips = [
+      { text: "High priority", icon: <Clock className="w-3 h-3" /> },
+      { text: "Recent activity", icon: <MessageCircle className="w-3 h-3" /> }
+    ];
+
+    switch (app) {
+      case "WhatsApp":
+        return [
+          { text: "Work group", icon: <MessageCircle className="w-3 h-3" /> },
+          { text: "Priority contact", icon: <Clock className="w-3 h-3" /> },
+          ...baseChips.slice(1)
+        ];
+      case "Instagram":
+        return [
+          { text: "You follow creator", icon: <Heart className="w-3 h-3" /> },
+          { text: "Similar content", icon: <Eye className="w-3 h-3" /> },
+          ...baseChips
+        ];
+      case "Twitter":
+        return [
+          { text: "Your tweet", icon: <MessageCircle className="w-3 h-3" /> },
+          { text: "Active conversation", icon: <Clock className="w-3 h-3" /> },
+          ...baseChips.slice(1)
+        ];
+      case "Calendar":
+        return [
+          { text: "Important meeting", icon: <CalendarIcon className="w-3 h-3" /> },
+          { text: "Upcoming event", icon: <Clock className="w-3 h-3" /> },
+          ...baseChips.slice(1)
+        ];
+      default:
+        return baseChips;
+    }
+  };
+
   const unreadCount = notifications.filter(n => !n.isRead).length;
 
   return (
