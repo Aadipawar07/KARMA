@@ -47,7 +47,7 @@ export default function Index() {
 
       {/* Today's Mindfulness Card */}
       <div className="px-4 sm:px-6 mb-6">
-        <Card className="bg-gradient-to-r from-karma-cream-200 to-karma-cream-300 border-karma-cream-300">
+        <Card className="bg-gradient-to-r from-karma-cream-200 to-karma-cream-300 border-karma-cream-300 shadow-sm">
           <CardContent className="p-6">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-4 h-4 bg-karma-sage-500 rounded-full flex items-center justify-center">
