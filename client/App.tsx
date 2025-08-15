@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import FocusGate from "./pages/FocusGate";
+import Digest from "./pages/Digest";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
