@@ -46,7 +46,7 @@ export default function Index() {
       </div>
 
       {/* Today's Mindfulness Card */}
-      <div className="px-6 mb-6">
+      <div className="px-4 sm:px-6 mb-6">
         <Card className="bg-gradient-to-r from-karma-cream-200 to-karma-cream-300 border-karma-cream-300">
           <CardContent className="p-6">
             <div className="flex items-center gap-2 mb-4">
@@ -82,7 +82,7 @@ export default function Index() {
       </div>
 
       {/* Quick Actions */}
-      <div className="px-6 mb-6">
+      <div className="px-4 sm:px-6 mb-6">
         <h3 className="font-semibold text-karma-neutral-700 mb-4">Quick Actions</h3>
         
         <div className="space-y-3">
@@ -139,7 +139,7 @@ export default function Index() {
       </div>
 
       {/* Today's Reflection */}
-      <div className="px-6 mb-6">
+      <div className="px-4 sm:px-6 mb-6">
         <Card className="bg-karma-neutral-200 border-karma-neutral-300">
           <CardContent className="p-6">
             <h3 className="font-semibold text-karma-neutral-700 text-center mb-4">Today's Reflection</h3>
@@ -152,7 +152,7 @@ export default function Index() {
       </div>
 
       {/* Begin Mindful Session Button */}
-      <div className="px-6 mb-6">
+      <div className="px-4 sm:px-6 mb-6">
         <Button className="w-full bg-karma-sage-600 hover:bg-karma-sage-700 text-white font-semibold py-3 rounded-lg">
           Begin Mindful Session
         </Button>
