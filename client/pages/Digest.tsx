@@ -2,17 +2,19 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Home, 
-  Eye, 
-  Bell, 
-  Receipt, 
+import ContentReceipt from "@/components/ContentReceipt";
+import {
+  Home,
+  Eye,
+  Bell,
+  Receipt,
   Coins,
   Clock,
   MessageCircle,
   Heart,
   Calendar as CalendarIcon,
-  Settings
+  Settings,
+  Info
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
