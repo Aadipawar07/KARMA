@@ -173,29 +173,29 @@ export default function Index() {
           </div>
           
           <div className="flex flex-col items-center gap-1">
-            <div className="w-12 h-12 flex items-center justify-center">
-              <Eye className="w-5 h-5 text-karma-neutral-400" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+              <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
             </div>
             <span className="text-xs text-karma-neutral-400">Focus</span>
           </div>
           
           <div className="flex flex-col items-center gap-1">
-            <div className="w-12 h-12 flex items-center justify-center">
-              <Bell className="w-5 h-5 text-karma-neutral-400" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+              <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
             </div>
             <span className="text-xs text-karma-neutral-400">Digest</span>
           </div>
           
           <div className="flex flex-col items-center gap-1">
-            <div className="w-12 h-12 flex items-center justify-center">
-              <Receipt className="w-5 h-5 text-karma-neutral-400" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+              <Receipt className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
             </div>
             <span className="text-xs text-karma-neutral-400">Receipt</span>
           </div>
           
           <div className="flex flex-col items-center gap-1">
-            <div className="w-12 h-12 flex items-center justify-center">
-              <Coins className="w-5 h-5 text-karma-neutral-400" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+              <Coins className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
             </div>
             <span className="text-xs text-karma-neutral-400">Credits</span>
           </div>
