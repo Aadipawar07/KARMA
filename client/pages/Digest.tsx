@@ -279,6 +279,22 @@ export default function Digest() {
           </div>
         </div>
       </div>
+
+      {/* Content Receipt Modal */}
+      {selectedNotification && (
+        <ContentReceipt
+          isOpen={showContentReceipt}
+          onClose={() => {
+            setShowContentReceipt(false);
+            setSelectedNotification(null);
+          }}
+          contentReason={getContentReasonForNotification(selectedNotification.app)}
+          reasonChips={getReasonChipsForNotification(selectedNotification.app)}
+          creditsEarned={15}
+          streak={4}
+          impactMessage="25 credits = 25 trees planted"
+        />
+      )}
     </div>
   );
 }
