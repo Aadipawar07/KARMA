@@ -16,7 +16,7 @@ import {
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-karma-neutral-50 flex flex-col max-w-md mx-auto">
+    <div className="min-h-screen bg-karma-neutral-50 flex flex-col w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto shadow-lg lg:shadow-xl">
       {/* Header Section */}
       <div className="px-6 pt-6 pb-4 bg-karma-neutral-50">
         {/* Logo */}
