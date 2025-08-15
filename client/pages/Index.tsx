@@ -166,8 +166,8 @@ export default function Index() {
       <div className="mt-auto bg-white border-t border-karma-neutral-200">
         <div className="flex items-center justify-around py-3 sm:py-4 px-2">
           <div className="flex flex-col items-center gap-1">
-            <div className="w-12 h-12 bg-karma-sage-100 rounded-lg flex items-center justify-center">
-              <Home className="w-5 h-5 text-karma-sage-600" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-karma-sage-100 rounded-lg flex items-center justify-center">
+              <Home className="w-4 h-4 sm:w-5 sm:h-5 text-karma-sage-600" />
             </div>
             <span className="text-xs text-karma-sage-600 font-medium">Home</span>
           </div>
