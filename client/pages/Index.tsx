@@ -140,7 +140,7 @@ export default function Index() {
 
       {/* Today's Reflection */}
       <div className="px-4 sm:px-6 mb-6">
-        <Card className="bg-karma-neutral-200 border-karma-neutral-300">
+        <Card className="bg-karma-neutral-200 border-karma-neutral-300 shadow-sm">
           <CardContent className="p-6">
             <h3 className="font-semibold text-karma-neutral-700 text-center mb-4">Today's Reflection</h3>
             <blockquote className="text-karma-neutral-700 text-sm italic text-center leading-relaxed mb-3">
