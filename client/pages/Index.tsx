@@ -28,10 +28,10 @@ export default function Index() {
         
         {/* Welcome Text */}
         <div className="text-center mb-4">
-          <h1 className="text-2xl font-bold text-karma-neutral-800 mb-2">
+          <h1 className="text-xl sm:text-2xl font-bold text-karma-neutral-800 mb-2">
             Welcome to Karma
           </h1>
-          <p className="text-karma-neutral-600 text-sm mb-4">
+          <p className="text-karma-neutral-600 text-xs sm:text-sm mb-4 px-2">
             Your mindful companion for digital well-being
           </p>
           
