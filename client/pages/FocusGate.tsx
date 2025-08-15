@@ -243,6 +243,46 @@ export default function FocusGate() {
           </Link>
         </div>
       </div>
+
+      {/* Bottom Navigation */}
+      <div className="mt-auto bg-white border-t border-karma-neutral-200">
+        <div className="flex items-center justify-around py-3 sm:py-4 px-2">
+          <Link to="/" className="flex flex-col items-center gap-1">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+              <Home className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
+            </div>
+            <span className="text-xs text-karma-neutral-400">Home</span>
+          </Link>
+
+          <div className="flex flex-col items-center gap-1">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-karma-sage-100 rounded-lg flex items-center justify-center">
+              <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-karma-sage-600" />
+            </div>
+            <span className="text-xs text-karma-sage-600 font-medium">Focus</span>
+          </div>
+
+          <Link to="/digest" className="flex flex-col items-center gap-1">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+              <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
+            </div>
+            <span className="text-xs text-karma-neutral-400">Digest</span>
+          </Link>
+
+          <Link to="/receipt" className="flex flex-col items-center gap-1">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+              <Receipt className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
+            </div>
+            <span className="text-xs text-karma-neutral-400">Receipt</span>
+          </Link>
+
+          <div className="flex flex-col items-center gap-1">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+              <Coins className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
+            </div>
+            <span className="text-xs text-karma-neutral-400">Credits</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
