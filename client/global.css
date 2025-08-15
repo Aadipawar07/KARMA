@@ -54,6 +54,32 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Karma App Colors */
+    --karma-sage-50: 151 15% 96%;
+    --karma-sage-100: 148 12% 90%;
+    --karma-sage-200: 148 10% 82%;
+    --karma-sage-300: 148 8% 68%;
+    --karma-sage-400: 148 12% 55%;
+    --karma-sage-500: 148 25% 42%;
+    --karma-sage-600: 148 30% 35%;
+    --karma-sage-700: 148 35% 28%;
+
+    --karma-cream-50: 48 20% 98%;
+    --karma-cream-100: 48 25% 94%;
+    --karma-cream-200: 45 30% 88%;
+    --karma-cream-300: 42 28% 82%;
+    --karma-cream-400: 40 25% 76%;
+
+    --karma-neutral-50: 0 0% 98%;
+    --karma-neutral-100: 180 2% 95%;
+    --karma-neutral-200: 180 2% 85%;
+    --karma-neutral-300: 180 3% 75%;
+    --karma-neutral-400: 180 3% 65%;
+    --karma-neutral-500: 180 4% 50%;
+    --karma-neutral-600: 180 5% 40%;
+    --karma-neutral-700: 180 6% 30%;
+    --karma-neutral-800: 180 8% 15%;
   }
 
   .dark {
