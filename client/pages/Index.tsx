@@ -106,22 +106,24 @@ export default function Index() {
           </Link>
 
           {/* View Notification Digest */}
-          <Card className="border-karma-neutral-200 hover:bg-karma-neutral-50 transition-colors cursor-pointer shadow-sm">
-            <CardContent className="flex items-center justify-between p-4">
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 bg-karma-neutral-100 rounded-full flex items-center justify-center">
-                  <Bell className="w-5 h-5 text-karma-neutral-600" />
+          <Link to="/digest">
+            <Card className="border-karma-neutral-200 hover:bg-karma-neutral-50 transition-colors cursor-pointer shadow-sm">
+              <CardContent className="flex items-center justify-between p-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 bg-karma-neutral-100 rounded-full flex items-center justify-center">
+                    <Bell className="w-5 h-5 text-karma-neutral-600" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-karma-neutral-800 text-sm">View Notification Digest</div>
+                    <div className="text-xs text-karma-neutral-600">4 batched notifications waiting</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-semibold text-karma-neutral-800 text-sm">View Notification Digest</div>
-                  <div className="text-xs text-karma-neutral-600">4 batched notifications waiting</div>
-                </div>
-              </div>
-              <Badge variant="secondary" className="bg-karma-sage-200 text-karma-sage-700 text-xs">
-                4
-              </Badge>
-            </CardContent>
-          </Card>
+                <Badge variant="secondary" className="bg-karma-sage-200 text-karma-sage-700 text-xs">
+                  4
+                </Badge>
+              </CardContent>
+            </Card>
+          </Link>
 
           {/* Karma Credits Dashboard */}
           <Card className="border-karma-neutral-200 hover:bg-karma-neutral-50 transition-colors cursor-pointer shadow-sm">
