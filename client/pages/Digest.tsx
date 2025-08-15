@@ -171,23 +171,37 @@ export default function Digest() {
                 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Badge 
-                      className="text-xs font-semibold px-2 py-1 rounded-lg"
-                      style={{ 
-                        backgroundColor: notification.appBg, 
-                        color: notification.appColor,
-                        border: 'none'
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <Badge
+                        className="text-xs font-semibold px-2 py-1 rounded-lg"
+                        style={{
+                          backgroundColor: notification.appBg,
+                          color: notification.appColor,
+                          border: 'none'
+                        }}
+                      >
+                        {notification.app}
+                      </Badge>
+                      <Badge
+                        variant="secondary"
+                        className="bg-karma-neutral-100 text-karma-neutral-700 text-xs"
+                      >
+                        {notification.count}
+                      </Badge>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleShowReceipt(notification);
                       }}
+                      className="h-6 px-2 text-xs text-karma-sage-600 hover:bg-karma-sage-100"
                     >
-                      {notification.app}
-                    </Badge>
-                    <Badge 
-                      variant="secondary" 
-                      className="bg-karma-neutral-100 text-karma-neutral-700 text-xs"
-                    >
-                      {notification.count}
-                    </Badge>
+                      <Info className="w-3 h-3 mr-1" />
+                      Why?
+                    </Button>
                   </div>
                   <h3 className="font-semibold text-karma-neutral-800 text-sm mb-1">
                     {notification.title}
