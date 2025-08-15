@@ -264,12 +264,12 @@ export default function Digest() {
             <span className="text-xs text-karma-sage-600 font-medium">Digest</span>
           </div>
           
-          <div className="flex flex-col items-center gap-1">
+          <Link to="/receipt" className="flex flex-col items-center gap-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
               <Receipt className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
             </div>
             <span className="text-xs text-karma-neutral-400">Receipt</span>
-          </div>
+          </Link>
           
           <div className="flex flex-col items-center gap-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
