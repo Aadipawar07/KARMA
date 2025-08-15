@@ -31,6 +31,8 @@ interface NotificationItem {
 }
 
 export default function Digest() {
+  const [showContentReceipt, setShowContentReceipt] = useState(false);
+  const [selectedNotification, setSelectedNotification] = useState<NotificationItem | null>(null);
   const [notifications, setNotifications] = useState<NotificationItem[]>([
     {
       id: "1",
