@@ -21,8 +21,8 @@ export default function Index() {
       <div className="px-4 sm:px-6 pt-6 pb-4 bg-karma-neutral-50">
         {/* Logo */}
         <div className="flex justify-center mb-4">
-          <div className="w-16 h-16 bg-karma-sage-300 rounded-full flex items-center justify-center">
-            <Star className="w-8 h-8 text-white fill-white" />
+          <div className="w-14 h-14 sm:w-16 sm:h-16 bg-karma-sage-300 rounded-full flex items-center justify-center">
+            <Star className="w-6 h-6 sm:w-8 sm:h-8 text-white fill-white" />
           </div>
         </div>
         
