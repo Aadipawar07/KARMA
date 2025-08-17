@@ -91,7 +91,7 @@ export default function FocusGate() {
   };
 
   return (
-    <div className="min-h-screen bg-karma-neutral-200 flex flex-col w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto">
+    <div className="h-screen bg-karma-neutral-200 flex flex-col w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between p-6">
         <div className="w-6"></div> {/* Spacer for center alignment */}
