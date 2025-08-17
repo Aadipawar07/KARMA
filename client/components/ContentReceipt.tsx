@@ -2,6 +2,7 @@ import { X, Info, User, TrendingUp, Clock, Zap, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 interface Goal {
   id: string;
@@ -60,7 +61,7 @@ export default function ContentReceipt({
         return {
           bg: 'bg-red-100 dark:bg-red-900',
           text: 'text-red-800 dark:text-red-200',
-          label: '��� Missed'
+          label: '❌ Missed'
         };
     }
   };
