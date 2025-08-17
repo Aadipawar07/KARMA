@@ -101,7 +101,7 @@ export default function Credits() {
   const creditsToGo = weeklyGoal - weeklyProgress;
 
   return (
-    <div className="min-h-screen bg-karma-neutral-50 flex flex-col w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto shadow-lg lg:shadow-xl">
+    <div className="h-screen bg-karma-neutral-50 flex flex-col w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto shadow-lg lg:shadow-xl overflow-hidden">
       {/* Header */}
       <div className="px-4 sm:px-6 pt-6 pb-4 bg-karma-neutral-50">
         <h1 className="text-xl font-bold text-karma-neutral-700 mb-2">Karma Credits</h1>
