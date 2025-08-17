@@ -11,6 +11,7 @@ import FocusGate from "./pages/FocusGate";
 import Digest from "./pages/Digest";
 import Receipt from "./pages/Receipt";
 import Goals from "./pages/Goals";
+import Credits from "./pages/Credits";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
