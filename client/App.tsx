@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import FocusGate from "./pages/FocusGate";
 import Digest from "./pages/Digest";
 import Receipt from "./pages/Receipt";
+import Goals from "./pages/Goals";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
