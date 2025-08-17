@@ -8,7 +8,7 @@ interface Goal {
   id: string;
   name: string;
   icon: React.ReactNode;
-  status: 'completed' | 'in_progress' | 'missed';
+  status: "completed" | "in_progress" | "missed";
 }
 
 interface ContentReceiptProps {
@@ -30,38 +30,53 @@ export default function ContentReceipt({
     { text: "You follow this creator", icon: <User className="w-3 h-3" /> },
     { text: "Fresh content", icon: <Zap className="w-3 h-3" /> },
     { text: "Trending now", icon: <TrendingUp className="w-3 h-3" /> },
-    { text: "Similar to saved", icon: <Target className="w-3 h-3" /> }
+    { text: "Similar to saved", icon: <Target className="w-3 h-3" /> },
   ],
   goals = [
-    { id: "1", name: "Mindful browsing (30 min)", icon: <Clock className="w-4 h-4" />, status: 'completed' },
-    { id: "2", name: "Focus sessions completed", icon: <Target className="w-4 h-4" />, status: 'in_progress' },
-    { id: "3", name: "Digital wellbeing check", icon: <Zap className="w-4 h-4" />, status: 'completed' }
+    {
+      id: "1",
+      name: "Mindful browsing (30 min)",
+      icon: <Clock className="w-4 h-4" />,
+      status: "completed",
+    },
+    {
+      id: "2",
+      name: "Focus sessions completed",
+      icon: <Target className="w-4 h-4" />,
+      status: "in_progress",
+    },
+    {
+      id: "3",
+      name: "Digital wellbeing check",
+      icon: <Zap className="w-4 h-4" />,
+      status: "completed",
+    },
   ],
   creditsEarned = 12,
   streak = 3,
-  impactMessage = "20 credits = 20 trees planted"
+  impactMessage = "20 credits = 20 trees planted",
 }: ContentReceiptProps) {
   if (!isOpen) return null;
 
-  const getStatusStyle = (status: Goal['status']) => {
+  const getStatusStyle = (status: Goal["status"]) => {
     switch (status) {
-      case 'completed':
+      case "completed":
         return {
-          bg: 'bg-green-100 dark:bg-green-900',
-          text: 'text-green-800 dark:text-green-200',
-          label: '✅ Completed'
+          bg: "bg-green-100 dark:bg-green-900",
+          text: "text-green-800 dark:text-green-200",
+          label: "✅ Completed",
         };
-      case 'in_progress':
+      case "in_progress":
         return {
-          bg: 'bg-yellow-100 dark:bg-yellow-900',
-          text: 'text-yellow-800 dark:text-yellow-200',
-          label: '⏳ In progress'
+          bg: "bg-yellow-100 dark:bg-yellow-900",
+          text: "text-yellow-800 dark:text-yellow-200",
+          label: "⏳ In progress",
         };
-      case 'missed':
+      case "missed":
         return {
-          bg: 'bg-red-100 dark:bg-red-900',
-          text: 'text-red-800 dark:text-red-200',
-          label: '❌ Missed'
+          bg: "bg-red-100 dark:bg-red-900",
+          text: "text-red-800 dark:text-red-200",
+          label: "❌ Missed",
         };
     }
   };
@@ -102,7 +117,7 @@ export default function ContentReceipt({
             <p className="text-sm text-karma-neutral-700 dark:text-karma-neutral-300 leading-relaxed">
               {contentReason}
             </p>
-            
+
             {/* Reason Chips */}
             <div className="flex flex-wrap gap-2">
               {reasonChips.map((chip, index) => (
@@ -111,7 +126,9 @@ export default function ContentReceipt({
                   variant="secondary"
                   className="bg-karma-neutral-100 dark:bg-karma-neutral-700 text-karma-sage-700 dark:text-karma-sage-300 text-xs px-3 py-1 rounded-full border-0"
                 >
-                  <span className="mr-1.5 text-karma-sage-500">{chip.icon}</span>
+                  <span className="mr-1.5 text-karma-sage-500">
+                    {chip.icon}
+                  </span>
                   {chip.text}
                 </Badge>
               ))}
@@ -126,12 +143,15 @@ export default function ContentReceipt({
             <h3 className="font-semibold text-karma-sage-800 dark:text-karma-sage-200">
               Your Daily Goals
             </h3>
-            
+
             <div className="space-y-3">
               {goals.map((goal) => {
                 const statusStyle = getStatusStyle(goal.status);
                 return (
-                  <div key={goal.id} className="flex items-center justify-between">
+                  <div
+                    key={goal.id}
+                    className="flex items-center justify-between"
+                  >
                     <div className="flex items-center gap-2">
                       <span className="text-karma-sage-600 dark:text-karma-sage-400">
                         {goal.icon}

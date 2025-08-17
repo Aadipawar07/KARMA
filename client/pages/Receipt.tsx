@@ -2,17 +2,17 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import ContentReceipt from "@/components/ContentReceipt";
-import { 
-  Home, 
-  Eye, 
-  Bell, 
-  Receipt as ReceiptIcon, 
+import {
+  Home,
+  Eye,
+  Bell,
+  Receipt as ReceiptIcon,
   Coins,
   Info,
   Calendar,
   Target,
   Clock,
-  Zap
+  Zap,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -25,35 +25,41 @@ export default function Receipt() {
       id: "daily-summary",
       title: "Daily Summary Receipt",
       description: "See why content appeared in your feeds today",
-      reason: "Your daily content was curated based on your mindful browsing goals and interaction patterns.",
+      reason:
+        "Your daily content was curated based on your mindful browsing goals and interaction patterns.",
       chips: [
-        { text: "Mindful browsing active", icon: <Target className="w-3 h-3" /> },
+        {
+          text: "Mindful browsing active",
+          icon: <Target className="w-3 h-3" />,
+        },
         { text: "Goal-aligned content", icon: <Zap className="w-3 h-3" /> },
-        { text: "Reduced distractions", icon: <Clock className="w-3 h-3" /> }
-      ]
+        { text: "Reduced distractions", icon: <Clock className="w-3 h-3" /> },
+      ],
     },
     {
       id: "focus-session",
-      title: "Focus Session Receipt", 
+      title: "Focus Session Receipt",
       description: "Understand your focus session recommendations",
-      reason: "Focus suggestions appear based on your productivity patterns and stress levels detected through usage.",
+      reason:
+        "Focus suggestions appear based on your productivity patterns and stress levels detected through usage.",
       chips: [
         { text: "High stress detected", icon: <Target className="w-3 h-3" /> },
         { text: "Break time needed", icon: <Clock className="w-3 h-3" /> },
-        { text: "Productivity pattern", icon: <Zap className="w-3 h-3" /> }
-      ]
+        { text: "Productivity pattern", icon: <Zap className="w-3 h-3" /> },
+      ],
     },
     {
       id: "digest-timing",
       title: "Digest Timing Receipt",
       description: "Learn why your digest was delivered now",
-      reason: "Your notification digest was delivered at this time to align with your natural attention cycles.",
+      reason:
+        "Your notification digest was delivered at this time to align with your natural attention cycles.",
       chips: [
         { text: "Optimal attention", icon: <Eye className="w-3 h-3" /> },
         { text: "Low distraction period", icon: <Clock className="w-3 h-3" /> },
-        { text: "Natural break time", icon: <Target className="w-3 h-3" /> }
-      ]
-    }
+        { text: "Natural break time", icon: <Target className="w-3 h-3" /> },
+      ],
+    },
   ];
 
   const [selectedExample, setSelectedExample] = useState(receiptExamples[0]);
@@ -62,7 +68,9 @@ export default function Receipt() {
     <div className="min-h-screen bg-karma-neutral-50 flex flex-col w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto shadow-lg lg:shadow-xl">
       {/* Header */}
       <div className="px-4 sm:px-6 pt-6 pb-4 bg-karma-neutral-50">
-        <h1 className="text-2xl font-bold text-karma-neutral-800 mb-2">Content Receipts</h1>
+        <h1 className="text-2xl font-bold text-karma-neutral-800 mb-2">
+          Content Receipts
+        </h1>
         <p className="text-karma-neutral-600 text-base">
           Understand why you see what you see
         </p>
@@ -79,17 +87,20 @@ export default function Receipt() {
               Transparency in Action
             </h2>
             <p className="text-karma-neutral-600 mb-6 max-w-sm mx-auto">
-              Content receipts explain why specific content appears in your digital experience. 
-              This promotes mindful consumption and builds trust.
+              Content receipts explain why specific content appears in your
+              digital experience. This promotes mindful consumption and builds
+              trust.
             </p>
           </div>
 
           {/* Example Receipt Types */}
           <div className="space-y-3">
-            <h3 className="font-semibold text-karma-neutral-700 mb-3">Try Example Receipts</h3>
+            <h3 className="font-semibold text-karma-neutral-700 mb-3">
+              Try Example Receipts
+            </h3>
             {receiptExamples.map((example) => (
-              <Card 
-                key={example.id} 
+              <Card
+                key={example.id}
                 className="border-karma-neutral-200 hover:bg-karma-neutral-50 transition-colors cursor-pointer shadow-sm"
                 onClick={() => {
                   setSelectedExample(example);
@@ -155,28 +166,30 @@ export default function Receipt() {
             </div>
             <span className="text-xs text-karma-neutral-400">Home</span>
           </Link>
-          
+
           <Link to="/focus-gate" className="flex flex-col items-center gap-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
               <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
             </div>
             <span className="text-xs text-karma-neutral-400">Focus</span>
           </Link>
-          
+
           <Link to="/digest" className="flex flex-col items-center gap-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
               <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
             </div>
             <span className="text-xs text-karma-neutral-400">Digest</span>
           </Link>
-          
+
           <div className="flex flex-col items-center gap-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 bg-karma-sage-100 rounded-lg flex items-center justify-center">
               <ReceiptIcon className="w-4 h-4 sm:w-5 sm:h-5 text-karma-sage-600" />
             </div>
-            <span className="text-xs text-karma-sage-600 font-medium">Receipt</span>
+            <span className="text-xs text-karma-sage-600 font-medium">
+              Receipt
+            </span>
           </div>
-          
+
           <Link to="/credits" className="flex flex-col items-center gap-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
               <Coins className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />

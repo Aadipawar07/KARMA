@@ -14,7 +14,7 @@ import {
   Heart,
   Calendar as CalendarIcon,
   Settings,
-  Info
+  Info,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -32,7 +32,8 @@ interface NotificationItem {
 
 export default function Digest() {
   const [showContentReceipt, setShowContentReceipt] = useState(false);
-  const [selectedNotification, setSelectedNotification] = useState<NotificationItem | null>(null);
+  const [selectedNotification, setSelectedNotification] =
+    useState<NotificationItem | null>(null);
   const [notifications, setNotifications] = useState<NotificationItem[]>([
     {
       id: "1",
@@ -43,7 +44,7 @@ export default function Digest() {
       title: "3 new messages from work group",
       timestamp: "2 hours ago",
       count: 3,
-      isRead: false
+      isRead: false,
     },
     {
       id: "2",
@@ -54,7 +55,7 @@ export default function Digest() {
       title: "Your post received 12 likes",
       timestamp: "3 hours ago",
       count: 12,
-      isRead: false
+      isRead: false,
     },
     {
       id: "3",
@@ -65,7 +66,7 @@ export default function Digest() {
       title: "2 replies to your tweet",
       timestamp: "4 hours ago",
       count: 2,
-      isRead: false
+      isRead: false,
     },
     {
       id: "4",
@@ -76,12 +77,14 @@ export default function Digest() {
       title: "Meeting in 30 minutes",
       timestamp: "30 minutes",
       count: 1,
-      isRead: false
-    }
+      isRead: false,
+    },
   ]);
 
   const handleMarkAsRead = () => {
-    setNotifications(prev => prev.map(notif => ({ ...notif, isRead: true })));
+    setNotifications((prev) =>
+      prev.map((notif) => ({ ...notif, isRead: true })),
+    );
   };
 
   const handleShowReceipt = (notification: NotificationItem) => {
@@ -107,7 +110,7 @@ export default function Digest() {
   const getReasonChipsForNotification = (app: string) => {
     const baseChips = [
       { text: "High priority", icon: <Clock className="w-3 h-3" /> },
-      { text: "Recent activity", icon: <MessageCircle className="w-3 h-3" /> }
+      { text: "Recent activity", icon: <MessageCircle className="w-3 h-3" /> },
     ];
 
     switch (app) {
@@ -115,32 +118,35 @@ export default function Digest() {
         return [
           { text: "Work group", icon: <MessageCircle className="w-3 h-3" /> },
           { text: "Priority contact", icon: <Clock className="w-3 h-3" /> },
-          ...baseChips.slice(1)
+          ...baseChips.slice(1),
         ];
       case "Instagram":
         return [
           { text: "You follow creator", icon: <Heart className="w-3 h-3" /> },
           { text: "Similar content", icon: <Eye className="w-3 h-3" /> },
-          ...baseChips
+          ...baseChips,
         ];
       case "Twitter":
         return [
           { text: "Your tweet", icon: <MessageCircle className="w-3 h-3" /> },
           { text: "Active conversation", icon: <Clock className="w-3 h-3" /> },
-          ...baseChips.slice(1)
+          ...baseChips.slice(1),
         ];
       case "Calendar":
         return [
-          { text: "Important meeting", icon: <CalendarIcon className="w-3 h-3" /> },
+          {
+            text: "Important meeting",
+            icon: <CalendarIcon className="w-3 h-3" />,
+          },
           { text: "Upcoming event", icon: <Clock className="w-3 h-3" /> },
-          ...baseChips.slice(1)
+          ...baseChips.slice(1),
         ];
       default:
         return baseChips;
     }
   };
 
-  const unreadCount = notifications.filter(n => !n.isRead).length;
+  const unreadCount = notifications.filter((n) => !n.isRead).length;
 
   return (
     <div className="h-screen bg-karma-neutral-50 flex flex-col w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto shadow-lg lg:shadow-xl overflow-hidden">
@@ -149,7 +155,9 @@ export default function Digest() {
         {/* Header */}
         <div className="px-4 sm:px-6 pt-6 pb-4 bg-karma-neutral-50">
           <div className="flex items-start justify-between mb-2">
-            <h1 className="text-2xl font-bold text-karma-neutral-800">Today's Digest</h1>
+            <h1 className="text-2xl font-bold text-karma-neutral-800">
+              Today's Digest
+            </h1>
             <div className="flex items-center gap-2 text-karma-neutral-500">
               <Clock className="w-4 h-4" />
               <span className="text-sm">Last updated 5 min ago</span>
@@ -163,7 +171,10 @@ export default function Digest() {
         {/* Notification Cards */}
         <div className="px-4 sm:px-6 space-y-4 mb-6">
           {notifications.map((notification) => (
-            <Card key={notification.id} className="border-karma-neutral-200 shadow-sm">
+            <Card
+              key={notification.id}
+              className="border-karma-neutral-200 shadow-sm"
+            >
               <CardContent className="p-4">
                 <div className="flex items-start gap-4">
                   {/* App Icon */}
@@ -180,7 +191,7 @@ export default function Digest() {
                           style={{
                             backgroundColor: notification.appBg,
                             color: notification.appColor,
-                            border: 'none'
+                            border: "none",
                           }}
                         >
                           {notification.app}
@@ -252,28 +263,30 @@ export default function Digest() {
             </div>
             <span className="text-xs text-karma-neutral-400">Home</span>
           </Link>
-          
+
           <Link to="/focus-gate" className="flex flex-col items-center gap-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
               <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
             </div>
             <span className="text-xs text-karma-neutral-400">Focus</span>
           </Link>
-          
+
           <div className="flex flex-col items-center gap-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 bg-karma-sage-100 rounded-lg flex items-center justify-center">
               <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-karma-sage-600" />
             </div>
-            <span className="text-xs text-karma-sage-600 font-medium">Digest</span>
+            <span className="text-xs text-karma-sage-600 font-medium">
+              Digest
+            </span>
           </div>
-          
+
           <Link to="/receipt" className="flex flex-col items-center gap-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
               <Receipt className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
             </div>
             <span className="text-xs text-karma-neutral-400">Receipt</span>
           </Link>
-          
+
           <Link to="/credits" className="flex flex-col items-center gap-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
               <Coins className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
@@ -291,7 +304,9 @@ export default function Digest() {
             setShowContentReceipt(false);
             setSelectedNotification(null);
           }}
-          contentReason={getContentReasonForNotification(selectedNotification.app)}
+          contentReason={getContentReasonForNotification(
+            selectedNotification.app,
+          )}
           reasonChips={getReasonChipsForNotification(selectedNotification.app)}
           creditsEarned={15}
           streak={4}

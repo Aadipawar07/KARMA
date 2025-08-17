@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Home, 
-  Eye, 
-  Bell, 
-  Receipt, 
+import {
+  Home,
+  Eye,
+  Bell,
+  Receipt,
   Coins,
   Target,
   TrendingUp,
@@ -18,7 +18,7 @@ import {
   GraduationCap,
   Utensils,
   Heart,
-  ChevronRight
+  ChevronRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -50,7 +50,12 @@ export default function Credits() {
     { id: "1", title: "Completing Focus Gates", credits: 5, completed: true },
     { id: "2", title: "Daily mindful check-ins", credits: 10, completed: true },
     { id: "3", title: "Screen time under goal", credits: 15, completed: false },
-    { id: "4", title: "Weekly challenge completed", credits: 25, completed: false }
+    {
+      id: "4",
+      title: "Weekly challenge completed",
+      credits: 25,
+      completed: false,
+    },
   ];
 
   const impactOptions: ImpactOption[] = [
@@ -60,7 +65,7 @@ export default function Credits() {
       description: "Support reforestation efforts",
       impact: "Impact 1 tree planted",
       credits: 50,
-      icon: <TreePine className="w-6 h-6" />
+      icon: <TreePine className="w-6 h-6" />,
     },
     {
       id: "2",
@@ -68,7 +73,7 @@ export default function Credits() {
       description: "Fund online courses for underserved communities",
       impact: "Impact 1 week of courses",
       credits: 100,
-      icon: <GraduationCap className="w-6 h-6" />
+      icon: <GraduationCap className="w-6 h-6" />,
     },
     {
       id: "3",
@@ -76,7 +81,7 @@ export default function Credits() {
       description: "Provide meals to those in need",
       impact: "Impact: 5 meals provided",
       credits: 25,
-      icon: <Utensils className="w-6 h-6" />
+      icon: <Utensils className="w-6 h-6" />,
     },
     {
       id: "4",
@@ -84,15 +89,15 @@ export default function Credits() {
       description: "Support mental health resources",
       impact: "Impact 1 therapy session",
       credits: 75,
-      icon: <Heart className="w-6 h-6" />
-    }
+      icon: <Heart className="w-6 h-6" />,
+    },
   ];
 
   const handleDonation = (option: ImpactOption) => {
     if (availableCredits >= option.credits) {
-      setAvailableCredits(prev => prev - option.credits);
+      setAvailableCredits((prev) => prev - option.credits);
       if (option.id === "1") {
-        setTreesPlanted(prev => prev + 1);
+        setTreesPlanted((prev) => prev + 1);
       }
     }
   };
@@ -106,7 +111,9 @@ export default function Credits() {
       <div className="flex-1 overflow-y-auto pb-20">
         {/* Header */}
         <div className="px-4 sm:px-6 pt-6 pb-4 bg-karma-neutral-50">
-          <h1 className="text-xl font-bold text-karma-neutral-700 mb-2">Karma Credits</h1>
+          <h1 className="text-xl font-bold text-karma-neutral-700 mb-2">
+            Karma Credits
+          </h1>
           <p className="text-karma-neutral-600 text-sm">
             Mindful usage earns credits for positive impact
           </p>
@@ -114,7 +121,6 @@ export default function Credits() {
 
         {/* Main Content */}
         <div className="px-4 sm:px-6 space-y-6 mb-6">
-
           {/* Credits Overview Card */}
           <Card className="bg-gradient-to-r from-karma-sage-500 to-karma-sage-400 border-0 text-white shadow-lg">
             <CardContent className="p-6">
@@ -125,18 +131,28 @@ export default function Credits() {
               </div>
 
               <div className="text-center mb-6">
-                <p className="text-white/90 text-sm font-medium mb-2">Available Credits</p>
-                <div className="text-4xl font-bold mb-4">{availableCredits}</div>
+                <p className="text-white/90 text-sm font-medium mb-2">
+                  Available Credits
+                </p>
+                <div className="text-4xl font-bold mb-4">
+                  {availableCredits}
+                </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center">
                   <div className="text-2xl font-semibold">{daysStreak}</div>
-                  <p className="text-white/90 text-xs font-medium">Days Streak</p>
+                  <p className="text-white/90 text-xs font-medium">
+                    Days Streak
+                  </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-semibold">+{todaysEarnings}</div>
-                  <p className="text-white/90 text-xs font-medium">Today's Earnings</p>
+                  <div className="text-2xl font-semibold">
+                    +{todaysEarnings}
+                  </div>
+                  <p className="text-white/90 text-xs font-medium">
+                    Today's Earnings
+                  </p>
                 </div>
               </div>
             </CardContent>
@@ -148,7 +164,9 @@ export default function Credits() {
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
                   <Target className="w-4 h-4 text-karma-sage-600" />
-                  <h3 className="font-semibold text-karma-neutral-800">Weekly Goal</h3>
+                  <h3 className="font-semibold text-karma-neutral-800">
+                    Weekly Goal
+                  </h3>
                 </div>
                 <Badge
                   variant="secondary"
@@ -166,8 +184,12 @@ export default function Credits() {
                   ></div>
                 </div>
                 <div className="flex justify-between text-xs">
-                  <span className="text-karma-neutral-600 font-medium">{progressPercentage}% complete</span>
-                  <span className="text-karma-neutral-700 font-semibold">{creditsToGo} credits to go</span>
+                  <span className="text-karma-neutral-600 font-medium">
+                    {progressPercentage}% complete
+                  </span>
+                  <span className="text-karma-neutral-700 font-semibold">
+                    {creditsToGo} credits to go
+                  </span>
                 </div>
               </div>
             </CardContent>
@@ -178,25 +200,32 @@ export default function Credits() {
             <CardContent className="p-4">
               <div className="flex items-center gap-2 mb-4">
                 <TrendingUp className="w-4 h-4 text-karma-sage-600" />
-                <h3 className="font-semibold text-karma-neutral-800">Earn Credits By:</h3>
+                <h3 className="font-semibold text-karma-neutral-800">
+                  Earn Credits By:
+                </h3>
               </div>
 
               <div className="space-y-3">
                 {earnMethods.map((method) => (
-                  <div key={method.id} className="flex items-center justify-between">
+                  <div
+                    key={method.id}
+                    className="flex items-center justify-between"
+                  >
                     <div className="flex items-center gap-2">
                       {method.completed ? (
                         <CheckCircle className="w-4 h-4 text-green-500" />
                       ) : (
                         <Clock className="w-4 h-4 text-karma-neutral-400" />
                       )}
-                      <span className={`text-sm ${method.completed ? 'text-karma-neutral-600' : 'text-karma-neutral-700'}`}>
+                      <span
+                        className={`text-sm ${method.completed ? "text-karma-neutral-600" : "text-karma-neutral-700"}`}
+                      >
                         {method.title}
                       </span>
                     </div>
                     <Badge
                       variant="secondary"
-                      className={`text-xs ${method.completed ? 'bg-green-100 text-green-700' : 'bg-karma-neutral-100 text-karma-neutral-600'}`}
+                      className={`text-xs ${method.completed ? "bg-green-100 text-green-700" : "bg-karma-neutral-100 text-karma-neutral-600"}`}
                     >
                       +{method.credits} credits
                     </Badge>
@@ -208,7 +237,9 @@ export default function Credits() {
 
           {/* Make an Impact */}
           <div>
-            <h3 className="font-semibold text-karma-neutral-800 mb-4">Make an Impact</h3>
+            <h3 className="font-semibold text-karma-neutral-800 mb-4">
+              Make an Impact
+            </h3>
             <div className="space-y-3">
               {impactOptions.map((option) => (
                 <Card
@@ -220,15 +251,21 @@ export default function Credits() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 bg-karma-sage-100 rounded-full flex items-center justify-center">
-                          <span className="text-karma-sage-600">{option.icon}</span>
+                          <span className="text-karma-sage-600">
+                            {option.icon}
+                          </span>
                         </div>
                         <div className="flex-1">
                           <h4 className="font-semibold text-karma-neutral-800 text-sm mb-1">
                             {option.title}
                           </h4>
                           <div className="text-xs space-y-0.5">
-                            <p className="text-karma-neutral-600">{option.description}</p>
-                            <p className="text-karma-sage-600 font-medium">{option.impact}</p>
+                            <p className="text-karma-neutral-600">
+                              {option.description}
+                            </p>
+                            <p className="text-karma-sage-600 font-medium">
+                              {option.impact}
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -258,7 +295,8 @@ export default function Credits() {
                     You've helped plant {treesPlanted} trees this month!
                   </h4>
                   <p className="text-karma-sage-700 text-xs">
-                    Your mindful tech use is making a real difference in the world.
+                    Your mindful tech use is making a real difference in the
+                    world.
                   </p>
                 </div>
               </div>
@@ -276,33 +314,35 @@ export default function Credits() {
             </div>
             <span className="text-xs text-karma-neutral-400">Home</span>
           </Link>
-          
+
           <Link to="/focus-gate" className="flex flex-col items-center gap-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
               <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
             </div>
             <span className="text-xs text-karma-neutral-400">Focus</span>
           </Link>
-          
+
           <Link to="/digest" className="flex flex-col items-center gap-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
               <Bell className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
             </div>
             <span className="text-xs text-karma-neutral-400">Digest</span>
           </Link>
-          
+
           <Link to="/receipt" className="flex flex-col items-center gap-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
               <Receipt className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
             </div>
             <span className="text-xs text-karma-neutral-400">Receipt</span>
           </Link>
-          
+
           <div className="flex flex-col items-center gap-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 bg-karma-sage-100 rounded-lg flex items-center justify-center">
               <Coins className="w-4 h-4 sm:w-5 sm:h-5 text-karma-sage-600" />
             </div>
-            <span className="text-xs text-karma-sage-600 font-medium">Credits</span>
+            <span className="text-xs text-karma-sage-600 font-medium">
+              Credits
+            </span>
           </div>
         </div>
       </div>

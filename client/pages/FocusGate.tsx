@@ -1,7 +1,19 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { X, Pause, Play, Clock, Plus, Minus, Home, Eye, Bell, Receipt, Coins } from "lucide-react";
+import {
+  X,
+  Pause,
+  Play,
+  Clock,
+  Plus,
+  Minus,
+  Home,
+  Eye,
+  Bell,
+  Receipt,
+  Coins,
+} from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function FocusGate() {
@@ -20,7 +32,7 @@ export default function FocusGate() {
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
+    return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
   // Format duration display
@@ -37,7 +49,7 @@ export default function FocusGate() {
   // Timer effect
   useEffect(() => {
     let interval: NodeJS.Timeout;
-    
+
     if (isRunning && timeLeft > 0) {
       interval = setInterval(() => {
         setTimeLeft((time) => time - 1);
@@ -96,7 +108,7 @@ export default function FocusGate() {
       <div className="flex items-center justify-between p-6">
         <div className="w-6"></div> {/* Spacer for center alignment */}
         <h1 className="text-lg font-bold text-karma-neutral-700">Focus Gate</h1>
-        <button 
+        <button
           onClick={handleClose}
           className="w-6 h-6 flex items-center justify-center text-karma-neutral-600 hover:text-karma-neutral-800 transition-colors"
         >
@@ -106,7 +118,6 @@ export default function FocusGate() {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col items-center justify-center px-6 space-y-8">
-        
         {/* Timer Circle */}
         <div className="relative">
           <div className="w-28 h-28 sm:w-32 sm:h-32 bg-karma-sage-400 rounded-full border-4 border-karma-sage-600 flex items-center justify-center shadow-lg">
@@ -123,13 +134,17 @@ export default function FocusGate() {
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <Clock className="w-4 h-4 text-karma-sage-600" />
-                <span className="text-sm font-semibold text-karma-sage-700">Quick Select</span>
+                <span className="text-sm font-semibold text-karma-sage-700">
+                  Quick Select
+                </span>
               </div>
               <div className="grid grid-cols-3 gap-2">
                 {presetTimes.map((minutes) => (
                   <Button
                     key={minutes}
-                    variant={sessionDuration === minutes * 60 ? "default" : "outline"}
+                    variant={
+                      sessionDuration === minutes * 60 ? "default" : "outline"
+                    }
                     size="sm"
                     onClick={() => handlePresetSelect(minutes)}
                     className={`text-xs ${
@@ -147,7 +162,9 @@ export default function FocusGate() {
             {/* Custom Time Selector */}
             <Card className="border-karma-sage-200">
               <CardContent className="p-4">
-                <div className="text-sm font-semibold text-karma-sage-700 mb-3">Custom Duration</div>
+                <div className="text-sm font-semibold text-karma-sage-700 mb-3">
+                  Custom Duration
+                </div>
                 <div className="flex items-center justify-center gap-4">
                   <Button
                     variant="outline"
@@ -158,7 +175,9 @@ export default function FocusGate() {
                     <Minus className="w-3 h-3" />
                   </Button>
                   <div className="text-center min-w-[60px]">
-                    <div className="text-lg font-bold text-karma-sage-700">{customMinutes}</div>
+                    <div className="text-lg font-bold text-karma-sage-700">
+                      {customMinutes}
+                    </div>
                     <div className="text-xs text-karma-sage-600">minutes</div>
                   </div>
                   <Button
@@ -207,23 +226,23 @@ export default function FocusGate() {
       {/* Bottom Actions */}
       <div className="px-6 pb-8 space-y-4">
         {!isRunning && !isPaused && showTimeSelector && (
-          <Button 
+          <Button
             onClick={handleStartSession}
             className="w-full bg-karma-sage-600 hover:bg-karma-sage-700 text-white font-bold py-3 rounded-lg"
           >
             Start {formatDuration(Math.floor(sessionDuration / 60))} Session
           </Button>
         )}
-        
+
         {(isRunning || isPaused) && (
           <div className="space-y-2">
-            <Button 
+            <Button
               onClick={handleClose}
               className="w-full bg-karma-sage-600 hover:bg-karma-sage-700 text-white font-bold py-3 rounded-lg"
             >
               Complete Session
             </Button>
-            <Button 
+            <Button
               onClick={resetSession}
               variant="outline"
               className="w-full border-karma-sage-300 text-karma-sage-700 hover:bg-karma-sage-50"
@@ -235,8 +254,8 @@ export default function FocusGate() {
 
         {/* Back Link */}
         <div className="text-center">
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="text-karma-neutral-600 text-sm font-bold hover:text-karma-neutral-800 transition-colors"
           >
             I'll come back later
@@ -258,7 +277,9 @@ export default function FocusGate() {
             <div className="w-10 h-10 sm:w-12 sm:h-12 bg-karma-sage-100 rounded-lg flex items-center justify-center">
               <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-karma-sage-600" />
             </div>
-            <span className="text-xs text-karma-sage-600 font-medium">Focus</span>
+            <span className="text-xs text-karma-sage-600 font-medium">
+              Focus
+            </span>
           </div>
 
           <Link to="/digest" className="flex flex-col items-center gap-1">
