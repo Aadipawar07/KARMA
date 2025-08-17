@@ -186,13 +186,15 @@ export default function ContentReceipt({
             <p className="text-xs text-karma-sage-500 dark:text-karma-sage-400 mb-2">
               Reason and progress generated on-device — your data stays private.
             </p>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-karma-sage-700 dark:text-karma-sage-300 hover:bg-karma-sage-100 dark:hover:bg-karma-sage-800 p-0 h-auto font-medium"
-            >
-              View all goals →
-            </Button>
+            <Link to="/goals">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-karma-sage-700 dark:text-karma-sage-300 hover:bg-karma-sage-100 dark:hover:bg-karma-sage-800 p-0 h-auto font-medium"
+              >
+                View all goals →
+              </Button>
+            </Link>
           </div>
         </CardContent>
       </Card>
