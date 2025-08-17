@@ -144,104 +144,107 @@ export default function Digest() {
 
   return (
     <div className="h-screen bg-karma-neutral-50 flex flex-col w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto shadow-lg lg:shadow-xl overflow-hidden">
-      {/* Header */}
-      <div className="px-4 sm:px-6 pt-6 pb-4 bg-karma-neutral-50">
-        <div className="flex items-start justify-between mb-2">
-          <h1 className="text-2xl font-bold text-karma-neutral-800">Today's Digest</h1>
-          <div className="flex items-center gap-2 text-karma-neutral-500">
-            <Clock className="w-4 h-4" />
-            <span className="text-sm">Last updated 5 min ago</span>
+      {/* Scrollable Content */}
+      <div className="flex-1 overflow-y-auto pb-20">
+        {/* Header */}
+        <div className="px-4 sm:px-6 pt-6 pb-4 bg-karma-neutral-50">
+          <div className="flex items-start justify-between mb-2">
+            <h1 className="text-2xl font-bold text-karma-neutral-800">Today's Digest</h1>
+            <div className="flex items-center gap-2 text-karma-neutral-500">
+              <Clock className="w-4 h-4" />
+              <span className="text-sm">Last updated 5 min ago</span>
+            </div>
+          </div>
+          <p className="text-karma-neutral-600 text-base">
+            Your notifications, batched mindfully
+          </p>
+        </div>
+
+        {/* Notification Cards */}
+        <div className="px-4 sm:px-6 space-y-4 mb-6">
+          {notifications.map((notification) => (
+            <Card key={notification.id} className="border-karma-neutral-200 shadow-sm">
+              <CardContent className="p-4">
+                <div className="flex items-start gap-4">
+                  {/* App Icon */}
+                  <div className="w-12 h-12 bg-karma-sage-200 rounded-full flex items-center justify-center flex-shrink-0">
+                    {notification.icon}
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <Badge
+                          className="text-xs font-semibold px-2 py-1 rounded-lg"
+                          style={{
+                            backgroundColor: notification.appBg,
+                            color: notification.appColor,
+                            border: 'none'
+                          }}
+                        >
+                          {notification.app}
+                        </Badge>
+                        <Badge
+                          variant="secondary"
+                          className="bg-karma-neutral-100 text-karma-neutral-700 text-xs"
+                        >
+                          {notification.count}
+                        </Badge>
+                      </div>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleShowReceipt(notification);
+                        }}
+                        className="h-6 px-2 text-xs text-karma-sage-600 hover:bg-karma-sage-100"
+                      >
+                        <Info className="w-3 h-3 mr-1" />
+                        Why?
+                      </Button>
+                    </div>
+                    <h3 className="font-semibold text-karma-neutral-800 text-sm mb-1">
+                      {notification.title}
+                    </h3>
+                    <p className="text-xs text-karma-neutral-600 font-medium">
+                      {notification.timestamp}
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Action Buttons */}
+        <div className="px-4 sm:px-6 space-y-3 mb-6">
+          {unreadCount > 0 && (
+            <Button
+              onClick={handleMarkAsRead}
+              className="w-full bg-karma-sage-500 hover:bg-karma-sage-600 text-white font-semibold py-3 rounded-lg"
+            >
+              Mark as Read
+            </Button>
+          )}
+
+          <Button
+            variant="outline"
+            className="w-full border-karma-sage-300 text-karma-sage-700 hover:bg-karma-sage-50 font-semibold py-3 rounded-lg"
+          >
+            <Settings className="w-4 h-4 mr-2" />
+            Adjust Digest Settings
+          </Button>
+
+          <div className="text-center text-karma-neutral-600 text-sm mt-4">
+            Next digest in 4 hours - Protecting your focus
           </div>
         </div>
-        <p className="text-karma-neutral-600 text-base">
-          Your notifications, batched mindfully
-        </p>
       </div>
 
-      {/* Notification Cards */}
-      <div className="flex-1 px-4 sm:px-6 space-y-4">
-        {notifications.map((notification) => (
-          <Card key={notification.id} className="border-karma-neutral-200 shadow-sm">
-            <CardContent className="p-4">
-              <div className="flex items-start gap-4">
-                {/* App Icon */}
-                <div className="w-12 h-12 bg-karma-sage-200 rounded-full flex items-center justify-center flex-shrink-0">
-                  {notification.icon}
-                </div>
-                
-                {/* Content */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <Badge
-                        className="text-xs font-semibold px-2 py-1 rounded-lg"
-                        style={{
-                          backgroundColor: notification.appBg,
-                          color: notification.appColor,
-                          border: 'none'
-                        }}
-                      >
-                        {notification.app}
-                      </Badge>
-                      <Badge
-                        variant="secondary"
-                        className="bg-karma-neutral-100 text-karma-neutral-700 text-xs"
-                      >
-                        {notification.count}
-                      </Badge>
-                    </div>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleShowReceipt(notification);
-                      }}
-                      className="h-6 px-2 text-xs text-karma-sage-600 hover:bg-karma-sage-100"
-                    >
-                      <Info className="w-3 h-3 mr-1" />
-                      Why?
-                    </Button>
-                  </div>
-                  <h3 className="font-semibold text-karma-neutral-800 text-sm mb-1">
-                    {notification.title}
-                  </h3>
-                  <p className="text-xs text-karma-neutral-600 font-medium">
-                    {notification.timestamp}
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-
-      {/* Action Buttons */}
-      <div className="px-4 sm:px-6 py-6 space-y-3">
-        {unreadCount > 0 && (
-          <Button 
-            onClick={handleMarkAsRead}
-            className="w-full bg-karma-sage-500 hover:bg-karma-sage-600 text-white font-semibold py-3 rounded-lg"
-          >
-            Mark as Read
-          </Button>
-        )}
-        
-        <Button 
-          variant="outline"
-          className="w-full border-karma-sage-300 text-karma-sage-700 hover:bg-karma-sage-50 font-semibold py-3 rounded-lg"
-        >
-          <Settings className="w-4 h-4 mr-2" />
-          Adjust Digest Settings
-        </Button>
-        
-        <div className="text-center text-karma-neutral-600 text-sm mt-4">
-          Next digest in 4 hours - Protecting your focus
-        </div>
-      </div>
-
-      {/* Bottom Navigation */}
-      <div className="mt-auto bg-white border-t border-karma-neutral-200">
+      {/* Fixed Bottom Navigation */}
+      <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl bg-white border-t border-karma-neutral-200 shadow-lg">
         <div className="flex items-center justify-around py-3 sm:py-4 px-2">
           <Link to="/" className="flex flex-col items-center gap-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
