@@ -26,6 +26,7 @@ const App = () => (
           <Route path="/focus-gate" element={<FocusGate />} />
           <Route path="/digest" element={<Digest />} />
           <Route path="/receipt" element={<Receipt />} />
+          <Route path="/goals" element={<Goals />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
