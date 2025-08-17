@@ -200,12 +200,12 @@ export default function Index() {
             <span className="text-xs text-karma-neutral-400">Receipt</span>
           </Link>
           
-          <div className="flex flex-col items-center gap-1">
+          <Link to="/credits" className="flex flex-col items-center gap-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
               <Coins className="w-4 h-4 sm:w-5 sm:h-5 text-karma-neutral-400" />
             </div>
             <span className="text-xs text-karma-neutral-400">Credits</span>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
